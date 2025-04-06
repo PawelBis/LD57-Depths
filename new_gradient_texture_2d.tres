@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://chiiaodosbes"]
+
+[sub_resource type="Gradient" id="Gradient_x8ffd"]
+
+[resource]
+gradient = SubResource("Gradient_x8ffd")
+width = 1000
+height = 1000

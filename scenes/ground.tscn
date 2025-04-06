@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxyafjceu87fa"]
+
+[ext_resource type="Script" uid="uid://xpnkcv5cmagq" path="res://scripts/ground.gd" id="1_lmksl"]
+[ext_resource type="Shader" uid="uid://dp37phm6s57ef" path="res://shaders/ground.gdshader" id="1_mi8v4"]
+[ext_resource type="Texture2D" uid="uid://wigsnx210m1o" path="res://icon.svg" id="2_lmksl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5yvf"]
+shader = ExtResource("1_mi8v4")
+shader_parameter/digg_alpha = 0.4
+shader_parameter/digg_rect = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Ground" type="Node2D"]
+script = ExtResource("1_lmksl")
+width = null
+
+[node name="Polygon" type="Polygon2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_w5yvf")
+position = Vector2(3, 0)
+texture = ExtResource("2_lmksl")
+polygon = PackedVector2Array(-500, 0, 500, 0, 500, 1500, -500, 1500)
