@@ -1,16 +1,273 @@
-[gd_scene load_steps=3 format=3 uid="uid://8m5rsaxcd136"]
+[gd_scene load_steps=16 format=3 uid="uid://8m5rsaxcd136"]
 
 [ext_resource type="Texture2D" uid="uid://wigsnx210m1o" path="res://icon.svg" id="1_7weel"]
 [ext_resource type="Script" uid="uid://de2g8bwxnh4jt" path="res://scripts/digger.gd" id="2_isucn"]
+[ext_resource type="Texture2D" uid="uid://bswwwrxn8xowh" path="res://art/Smallburg_dungeon_pack_v2.13/assets/dungeon/floor/floor_dungeon.png" id="2_qfjl6"]
+[ext_resource type="Texture2D" uid="uid://dwhrt1yta034q" path="res://art/Free-Mining-Pixel-32x32-Icons/1 Icons/Icon31_03.png" id="3_4f2ov"]
+[ext_resource type="Shader" uid="uid://bqvuqp1uk7wte" path="res://shaders/spinning.gdshader" id="3_j8r2r"]
+[ext_resource type="Texture2D" uid="uid://qdvoltttd1bf" path="res://art/Free-Mining-Pixel-32x32-Icons/1 Icons/Icon31_09.png" id="4_j8r2r"]
+[ext_resource type="Texture2D" uid="uid://dvsvp4yl76t3t" path="res://art/Smallburg_mine_pack_v1.16/assets/mining/ores/mining_ores.png" id="6_lpmcf"]
 
-[node name="Digger" type="Sprite2D"]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(15, 1)
-texture = ExtResource("1_7weel")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7weel"]
+size = Vector2(258, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8r2r"]
+shader = ExtResource("3_j8r2r")
+shader_parameter/velocity = -50.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpmcf"]
+atlas = ExtResource("6_lpmcf")
+region = Rect2(195, 85, 10, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lpmcf"]
+shader = ExtResource("3_j8r2r")
+shader_parameter/velocity = 50.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5i3j"]
+atlas = ExtResource("6_lpmcf")
+region = Rect2(195, 85, 10, 10)
+
+[sub_resource type="Animation" id="Animation_4f2ov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainDrillHolder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SupportDrillers:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lpmcf"]
+resource_name = "drill"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainDrillHolder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1.1), Vector2(1, 0.9), Vector2(-1, 1.05), Vector2(1, 1), Vector2(-1, 1.15), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SupportDrillers:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.9, 1.05), Vector2(1.1, 0.9), Vector2(0.9, 1.05), Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5i3j"]
+_data = {
+&"RESET": SubResource("Animation_4f2ov"),
+&"drill": SubResource("Animation_lpmcf")
+}
+
+[node name="Digger" type="RigidBody2D"]
+collision_layer = 129
+collision_mask = 0
 script = ExtResource("2_isucn")
 
-[node name="ShakeTimer" type="Timer" parent="."]
-one_shot = true
-autostart = true
+[node name="DigArea" type="Sprite2D" parent="."]
+scale = Vector2(2.00968, -0.040001)
+texture = ExtResource("1_7weel")
 
-[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_7weel")
+
+[node name="Platform" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-24, 0)
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="Platform3" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(104, 0)
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="Platform2" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(24, 0)
+rotation = 3.14159
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="Platform4" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(56, 0)
+rotation = 3.14159
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="Platform5" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-104, 0)
+rotation = 3.14159
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="Platform6" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-70, 0)
+rotation = 3.14159
+texture = ExtResource("2_qfjl6")
+region_enabled = true
+region_rect = Rect2(240, 544, 48, 16)
+
+[node name="SupportDrillers" type="Node2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="Drill3" type="Sprite2D" parent="SupportDrillers"]
+material = SubResource("ShaderMaterial_j8r2r")
+position = Vector2(19.3057, 15.5987)
+rotation = -1.88121
+scale = Vector2(0.541336, -1.36721)
+skew = 0.113689
+texture = ExtResource("4_j8r2r")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SupportDrillers/Drill3"]
+position = Vector2(-1.7108, -1.79845)
+rotation = -1.37675
+amount = 50
+texture = SubResource("AtlasTexture_lpmcf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color = Color(0.479879, 0.000162489, 0.479891, 1)
+
+[node name="Drill6" type="Sprite2D" parent="SupportDrillers"]
+material = SubResource("ShaderMaterial_j8r2r")
+position = Vector2(50, 17)
+rotation = -1.56905
+scale = Vector2(0.541336, -1.36721)
+skew = 0.113689
+texture = ExtResource("4_j8r2r")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SupportDrillers/Drill6"]
+position = Vector2(-1.7108, -1.79845)
+rotation = -1.37675
+amount = 50
+texture = SubResource("AtlasTexture_lpmcf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color = Color(0.479879, 0.000162489, 0.479891, 1)
+
+[node name="Drill4" type="Sprite2D" parent="SupportDrillers"]
+material = SubResource("ShaderMaterial_lpmcf")
+position = Vector2(-20, 16)
+rotation = -1.252
+scale = Vector2(0.541895, 1.36674)
+skew = -0.116541
+texture = ExtResource("4_j8r2r")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="SupportDrillers/Drill4"]
+position = Vector2(-3.31305, -2.5673)
+rotation = -1.44022
+scale = Vector2(1.29928, -0.936411)
+skew = 0.606537
+amount = 50
+texture = SubResource("AtlasTexture_lpmcf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color = Color(0.479879, 0.000162489, 0.479891, 1)
+
+[node name="Drill5" type="Sprite2D" parent="SupportDrillers"]
+material = SubResource("ShaderMaterial_lpmcf")
+position = Vector2(-50, 17)
+rotation = -1.55073
+scale = Vector2(0.541895, 1.36674)
+skew = -0.116541
+texture = ExtResource("4_j8r2r")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="SupportDrillers/Drill5"]
+position = Vector2(-3.31305, -2.5673)
+rotation = -1.44022
+scale = Vector2(1.29928, -0.936411)
+skew = 0.606537
+amount = 50
+texture = SubResource("AtlasTexture_lpmcf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color = Color(0.479879, 0.000162489, 0.479891, 1)
+
+[node name="MainDrillHolder" type="Node2D" parent="."]
+position = Vector2(0, -3)
+
+[node name="Drill2" type="Sprite2D" parent="MainDrillHolder"]
+position = Vector2(-4.76837e-07, 22)
+rotation = 2.33838
+texture = ExtResource("3_4f2ov")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MainDrillHolder/Drill2"]
+position = Vector2(15.831, -15.2768)
+rotation = -2.35619
+amount = 25
+texture = SubResource("AtlasTexture_f5i3j")
+particle_flag_align_y = true
+direction = Vector2(0, -1)
+spread = 30.0
+initial_velocity_min = 150.0
+initial_velocity_max = 300.0
+angular_velocity_min = -13.55
+angular_velocity_max = 720.0
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+scale_amount_min = 0.3
+scale_amount_max = 1.2
+color = Color(0.519662, 0.000196999, 0.521045, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f5i3j")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -34)
+zoom = Vector2(2, 2)

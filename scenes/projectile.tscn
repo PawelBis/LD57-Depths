@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnm0754n5ela4"]
+
+[ext_resource type="Texture2D" uid="uid://dvsvp4yl76t3t" path="res://art/Smallburg_mine_pack_v1.16/assets/mining/ores/mining_ores.png" id="1_c8fcr"]
+[ext_resource type="Script" uid="uid://dwh4cwchhxf67" path="res://scripts/projectile.gd" id="1_q3m7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3m7n"]
+atlas = ExtResource("1_c8fcr")
+region = Rect2(96, 80, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6aapk"]
+radius = 4.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_q3m7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_q3m7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6aapk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="clear"]

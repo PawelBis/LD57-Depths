@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://2hq7gqkjumwq"]
+
+[ext_resource type="Script" uid="uid://5qt52i6fjdia" path="res://scripts/rider.gd" id="1_b5q3t"]
+[ext_resource type="Texture2D" uid="uid://do5om155cis2p" path="res://art/Free-Mining-Pixel-32x32-Icons/1 Icons/Icon31_04.png" id="1_bq1av"]
+[ext_resource type="Texture2D" uid="uid://3qe3lfxqfm0v" path="res://art/Smallburg_mine_pack_v1.16/assets/character/idle/character_body/character_idle_body_black.png" id="2_a8d8s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b5q3t"]
+friction = 0.0
+bounce = 0.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8d8s"]
+atlas = ExtResource("2_a8d8s")
+region = Rect2(16, 80, 32, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5q3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8d8s"]
+radius = 13.3417
+
+[node name="Rider" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_b5q3t")
+script = ExtResource("1_b5q3t")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(-8, -5)
+rotation = 3.14159
+scale = Vector2(2, -2)
+texture = SubResource("AtlasTexture_a8d8s")
+
+[node name="Drill" type="Sprite2D" parent="."]
+position = Vector2(11, 0)
+rotation = 0.879325
+texture = ExtResource("1_bq1av")
+
+[node name="DrillCollision" type="Area2D" parent="Drill"]
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drill/DrillCollision"]
+position = Vector2(3.18836, -3.85154)
+rotation = 0.819169
+scale = Vector2(0.45485, 1.01666)
+shape = SubResource("CapsuleShape2D_b5q3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -3)
+shape = SubResource("CircleShape2D_a8d8s")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

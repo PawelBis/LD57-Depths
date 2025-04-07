@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mgk7jse7i0ka"]
+
+[ext_resource type="Script" uid="uid://dg51o1no6fada" path="res://scripts/gun_explosion.gd" id="1_dxyxh"]
+[ext_resource type="Texture2D" uid="uid://degrbh5gefrwa" path="res://art/Soldier Characters Pack by RgsDev/Extras/muzzle flash.png" id="1_utucp"]
+
+[node name="GunExplosion" type="Node2D"]
+script = ExtResource("1_dxyxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_utucp")

@@ -1,0 +1,271 @@
+[gd_scene load_steps=43 format=3 uid="uid://djuttpl7o3vh0"]
+
+[ext_resource type="Texture2D" uid="uid://dshyf000ssd70" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_idle_0.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://wbsjcps0hoin" path="res://scripts/player.gd" id="1_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://bvf52eg54dmki" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_fall_0.png" id="1_fulsm"]
+[ext_resource type="Texture2D" uid="uid://cl3ufd24mlot8" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_fall_1.png" id="2_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://ce7anvej4py60" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_idle_1.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://8elaq6jiagdr" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_idle_2.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dh6dupkqwdf46" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_idle_3.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://djcpxkwbht781" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_idle_4.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://bqkeih4ilmbqm" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_jump_1.png" id="8_60mlk"]
+[ext_resource type="Texture2D" uid="uid://bbjjawmgbk0eb" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_jump_0.png" id="9_i4ail"]
+[ext_resource type="Texture2D" uid="uid://bdbe21jimeakm" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_jump_2.png" id="10_a38lo"]
+[ext_resource type="Texture2D" uid="uid://00t2yrkj4er5" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_0.png" id="11_4ni07"]
+[ext_resource type="Texture2D" uid="uid://b6pa7oxa7ukfk" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_1.png" id="12_l71n6"]
+[ext_resource type="Texture2D" uid="uid://ppctfap2s0ju" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_2.png" id="13_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://c1s8b5vjiwvin" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_3.png" id="14_ujl30"]
+[ext_resource type="Texture2D" uid="uid://c120515ycs8d1" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_4.png" id="15_31cv2"]
+[ext_resource type="Texture2D" uid="uid://c3ficd5dwgd4n" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_5.png" id="16_pf23h"]
+[ext_resource type="Texture2D" uid="uid://booeuohvmma63" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_6.png" id="17_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://benkhutwq6bb5" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/soldier_5/soldier_5_run_7.png" id="18_wqfne"]
+[ext_resource type="Texture2D" uid="uid://c5h4mk7oi3hk4" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_fall_0.png" id="20_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://dh0rq5ihcp77p" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_idle_0.png" id="20_l71n6"]
+[ext_resource type="Texture2D" uid="uid://dnrgyduc8iid2" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_idle_1.png" id="21_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://criyek81u6bpk" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_fall_1.png" id="21_wqfne"]
+[ext_resource type="Texture2D" uid="uid://x71k82qrh6en" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_idle_2.png" id="22_ujl30"]
+[ext_resource type="Texture2D" uid="uid://b3bfvqi0rvf3t" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_idle_3.png" id="23_31cv2"]
+[ext_resource type="Texture2D" uid="uid://dh3yygpakqa06" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_idle_4.png" id="24_pf23h"]
+[ext_resource type="Texture2D" uid="uid://buaeb0touu8yt" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_jump_0.png" id="27_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://ccw4nhxs1h5fu" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_jump_1.png" id="28_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://dnywjrkp0ih1d" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_jump_2.png" id="29_487ah"]
+[ext_resource type="Texture2D" uid="uid://c15feoujtixxu" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_0.png" id="30_hax0n"]
+[ext_resource type="Texture2D" uid="uid://b61rtto0sa6b2" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_1.png" id="31_t4otl"]
+[ext_resource type="Texture2D" uid="uid://0dv5nxx6ytpk" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_2.png" id="32_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://hgranuc8a8ct" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_3.png" id="33_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://467vretqcjur" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_4.png" id="34_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://bpq65k5mxneox" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_5.png" id="35_giy8y"]
+[ext_resource type="Texture2D" uid="uid://qafuaxtdf0ev" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_6.png" id="36_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://dtqejwqc8evvy" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_run_7.png" id="37_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://bwo3dui6s6qrg" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_shoot_0.png" id="38_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://1tnb84rxewsj" path="res://art/Soldier Characters Pack by RgsDev/Separated parts/Weapons/assault_rifle/assault_rifle_shoot_1.png" id="39_cs1tg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fulsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4r5pv")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vyb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_smehm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_60mlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_fulsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4r5pv")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_60mlk")
+}],
+"loop": true,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wqfne")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4r5pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wqfne")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pf23h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_487ah")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_487ah")
+}],
+"loop": true,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_t4otl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_giy8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_hhpqf")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cs1tg")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_4r5pv")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -10)
+sprite_frames = SubResource("SpriteFrames_u8vuu")
+animation = &"run"
+
+[node name="Weapon" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_4r5pv")
+animation = &"land"
+offset = Vector2(0, -10)
+
+[node name="Muzzle" type="Node2D" parent="Weapon"]
+position = Vector2(7, 2)
+
+[node name="MuzzleRay" type="RayCast2D" parent="Weapon/Muzzle"]
+visible = false
+target_position = Vector2(10000, 0)
+collide_with_areas = true
+
+[node name="FlipMuzzle" type="Node2D" parent="Weapon"]
+position = Vector2(-7, 2)
+rotation = 3.14159
+
+[node name="MuzzleRay" type="RayCast2D" parent="Weapon/FlipMuzzle"]
+visible = false
+target_position = Vector2(10000, 0)
+collide_with_areas = true

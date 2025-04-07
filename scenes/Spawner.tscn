@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv21ycq0smndh"]
+
+[ext_resource type="Script" uid="uid://cny6s8py4n46p" path="res://scripts/spawner.gd" id="1_qcsvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kir3x"]
+
+[node name="Spawner" type="Area2D"]
+collision_layer = 8388608
+collision_mask = 128
+script = ExtResource("1_qcsvw")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kir3x")

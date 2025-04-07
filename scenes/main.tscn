@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4njcyggebe21"]
+[gd_scene load_steps=6 format=3 uid="uid://b4njcyggebe21"]
 
 [ext_resource type="PackedScene" uid="uid://bxyafjceu87fa" path="res://scenes/ground.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://8m5rsaxcd136" path="res://scenes/digger.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://djuttpl7o3vh0" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dv21ycq0smndh" path="res://scenes/Spawner.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://2hq7gqkjumwq" path="res://scenes/rider.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_o5qli")]
-width = 4000.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Digger" parent="." node_paths=PackedStringArray("ground") instance=ExtResource("2_0wfyh")]
-position = Vector2(0, -64)
-digging_velocity = 50.0
+position = Vector2(2, -11)
+gravity_scale = 0.0
+digging_velocity = 15.0
 ground = NodePath("../Ground")
 shake_angle = 0.5
-shake_time_interval_min = 0.1
-shake_time_interval_max = 0.5
+
+[node name="Player" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(1, -29)
+input_pickable = true
+
+[node name="Spawner" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(0, 100)
+scene_to_spawn = ExtResource("5_tbgi4")
+
+[node name="Node2D" type="Node2D" parent="Spawner"]
+position = Vector2(-162, -121)
+
+[node name="Node2D2" type="Node2D" parent="Spawner"]
+position = Vector2(-197, -126)
+scale = Vector2(1, -1)
